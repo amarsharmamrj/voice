@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <script>
+        if (annyang) {
+            // Let's define a command.
+            var commands = {
+                'hello': function() {
+                    alert('Hello world!');
+                },
+                'red': function() {
+                    $("h1").css("color", "red");
+                },
+                'black': function() {
+                    $("h1").css("color", "black");
+                },
+                'green': function() {
+                    $("h1").css("color", "green");
+                },
+                'yellow': function() {
+                    $("h1").css("color", "yellow");
+                },
+                '100': function() {
+                    $("h1").css("font-size", "100px");
+                },
+                '10': function() {
+                    $("h1").css("font-size", "10px");
+                }
+            };
+
+            // Add our commands to annyang
+            annyang.addCommands(commands);
+
+            // Start listening.
+            annyang.start();
+        }
+    </script>
+</body>
+
+</html>
